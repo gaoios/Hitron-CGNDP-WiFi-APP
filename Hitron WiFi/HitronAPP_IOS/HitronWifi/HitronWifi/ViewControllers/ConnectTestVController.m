@@ -1,0 +1,78 @@
+//
+//  ConnectTestVController.m
+//  HitronWifi
+//
+//  Created by Neo Gao on 16/6/1.
+//  Copyright © 2016年 Movit. All rights reserved.
+//
+
+#import "ConnectTestVController.h"
+
+
+@interface ConnectTestVController ()
+
+@property (weak, nonatomic) IBOutlet UITextView *textField;
+
+
+@end
+
+@implementation ConnectTestVController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    NSLog(@"this is connect test:");
+    
+    CGRect frame = CGRectMake(50,50,0,0);
+    frame.size = [UIImage imageNamed:@"guzhang.gif"].size;
+    // 读取gif图片数据
+    NSData *gifData = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"loading" ofType:@"gif"]];
+    // view生成
+//    UIWebView webView = [[UIWebView alloc] initWithFrame:frame];
+    self.webView.userInteractionEnabled = NO;//用户不可交互
+    [self.webView loadData:gifData MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
+//    [self.view addSubview:webView];
+//    [webView release];
+    
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)buttonStartClick:(id)sender {
+    //[self doConnectTest];
+}
+
+
+//- (void)doConnectTest{
+//    NSString *hostString = @"/1/Device/WiFi";
+//    [ConnectTestService doGet:hostString params:nil success:^(NSString *response){
+//        NSLog(@"%@",response);
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^(){
+//            [self.textField setText:response];
+//        });
+//        
+//    } failure:^(NSError *err){
+//        NSLog(@"%@",err);
+//        dispatch_async(dispatch_get_main_queue(), ^(){
+//            [self.textField setText:[NSString stringWithFormat:@"%@",err]];
+//        });
+//    }];
+//}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

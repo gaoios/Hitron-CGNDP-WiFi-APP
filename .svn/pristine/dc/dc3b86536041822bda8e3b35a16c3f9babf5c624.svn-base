@@ -1,0 +1,13 @@
+//
+//  HIWUtility.m
+//  HitronWifi
+//
+//  Created by ourtrip on 16/5/31.
+//  Copyright © 2016年 Movit. All rights reserved.
+//
+
+#import "HIWUtility.h"
+
+@implementation HIWUtility
+
+@end

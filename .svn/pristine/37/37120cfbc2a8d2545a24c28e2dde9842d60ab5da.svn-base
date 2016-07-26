@@ -1,0 +1,33 @@
+//
+//  HWUserManager.h
+//  HitronWifi
+//
+//  Created by ourtrip on 16/6/7.
+//  Copyright © 2016年 Neo.Gao. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "BaseModel.h"
+
+@class HWUser;
+
+@interface HWUserManager : NSObject
+
++ (HWUserManager *)getInstance;
+
+- (void) addUserWithUserInfo:(HWUser *) userInfo;
+- (void) updateUserWithUserInfo:(HWUser *) userInfo;
+
+
+//User Data Structure Manipulation
+- (void) getAllUserSucess:(void (^)(NSArray *users))success Failure:(void (^)(NSError *err))failure;
+- (void) removeUser:(HWUser *) user Sucess:(void (^)(NSString *res))success Failure:(void (^)(NSError *err))failure;;
+- (void) getUser:(HWUser *) user Sucess:(void (^)(HWUser *user))success Failure:(void (^)(NSError *err))failure;;
+
+//Single User Access
+- (void) setUserPassWord:(NSString *) userPassword;
+
+
+
+
+@end

@@ -1,0 +1,179 @@
+//
+//  HWUserManager.m
+//  HitronWifi
+//
+//  Created by ourtrip on 16/6/7.
+//  Copyright © 2016年 Movit. All rights reserved.
+//
+
+#import "HWUserManager.h"
+#import "HWUserInfoService.h"
+#import "HWUser.h"
+
+
+#define HWWIFI_RELATIVEURL_TEMPACESS @"/1/Device/WiFi/TempAccess"
+
+#define HWUSER_INFOMATION_RELATIVEURL_USER @"/1/Device/Users"
+#define HWUSER_INFOMATION_RELATIVEURL_LOGIN @"/1/Device/Users/Login"
+#define HWUSER_INFOMATION_RELATIVEURL_LOGIN_STATUS @"/1/Device/Users/LoginStatus"
+#define HWUSER_INFOMATION_RELATIVEURL_LOGOUT @"/1/Device/Users/Logout"
+#define HWUSER_INFOMATION_RELATIVEURL_NAMECHECK @"/1/Device/Users/Namecheck"
+#define HWUSER_INFOMATION_RELATIVEURL_PASSWORD @"/1/Device/Users/Password"
+
+
+@implementation HWUserManager
+
++(HWUserManager *)getInstance{
+    static dispatch_once_t once;
+    static id instance;
+    
+    dispatch_once(&once, ^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
+
++ (NSString *)getUserName{
+    return @"alice9527@hitron.com";
+}
+
++ (NSString *)getUserID{
+    return @"u0";
+}
+
+
+#pragma mark - User Data Structure Manipulation
+- (void) getAllUserSucess:(void (^)(NSArray *))success Failure:(void (^)(NSError *))failure {
+    NSString *relativeUrl = @"/1/Device/Users/";
+    
+    [HWUserInfoService doGet:relativeUrl params:@"" success:^(NSString *res){
+        NSDictionary *responseDic = [res JSONObject];
+        NSArray *user_list = [responseDic objectForKey:@"Users_List"];
+        
+        [HWUser setupObjectClassInArray:^NSDictionary *{
+            return @{
+                        @"Hosts_List":@"HWHost"
+                     };
+        }];
+        NSArray *user_model_list = [HWUser objectArrayWithKeyValuesArray:user_list];
+        if (success && user_model_list) {
+            success(user_model_list);
+        }
+    } failure:^(NSError *err){
+        NSLog(@"Reponse:%@",err);
+        failure(err);
+    }];
+}
+
+- (void) getUser:(HWUser *)user Sucess:(void (^)(HWUser *))success Failure:(void (^)(NSError *))failure{
+    NSString *relativeUrl = @"/1/Device/Users/";
+    NSString *relativeUserUrl = [NSString stringWithFormat:@"%@%@",relativeUrl,user.userID];
+    
+    [HWUserInfoService doGet:relativeUserUrl params:@"" success:^(NSString *res){
+        NSDictionary *responseDic = [res JSONObject];
+        
+        HWUser *responseUser = [HWUser objectWithKeyValues:responseDic];
+        success(responseUser);
+        
+        NSLog(@"Reponse:%@",relativeUrl);
+    } failure:^(NSError *err){
+        failure(err);
+    }];
+}
+
+- (void) removeUser:(HWUser *)user Sucess:(void (^)(NSString *))success Failure:(void (^)(NSError *))failure{
+    NSString *relativeUrl = @"/1/Device/Users/";
+    NSString *relativeUserUrl = [NSString stringWithFormat:@"%@%@",relativeUrl,user.userID];
+    
+    [HWUserInfoService doGet:relativeUserUrl params:@"" success:^(NSString *res){
+        NSDictionary *responseDic = [res JSONObject];
+        
+        success(@"");
+        
+        NSLog(@"Reponse:%@",relativeUrl);
+    } failure:^(NSError *err){
+        failure(err);
+    }];
+}
+
+
+#pragma mark - Single User Access
+- (void) setUserPassWord:(NSString *)oldPassword NewPassword:(NSString *)newPassword CheckNewPassword:(NSString *)checkPassword Name:(NSString *)name Sucess:(void (^)(BOOL))success Failure:(void (^)(NSError *))failure{
+    NSDictionary *postDic = @{
+                              @"name":name,
+                              @"oldpwd":oldPassword,
+                              @"newpwd":newPassword,
+                              @"check_newpwd":checkPassword
+                              };
+    
+    
+    
+    [HWUserInfoService doPost:HWUSER_INFOMATION_RELATIVEURL_PASSWORD params:postDic success:^(NSString *res){
+        NSDictionary *responseDic = [res JSONObject];
+        
+        NSLog(@"%@",responseDic);
+        if (responseDic) {
+            if ([[responseDic objectForKey:@"errCode"] isEqualToString:@"000"]) {
+                success(YES);
+            }else{
+                //HW AlertView Show the Error message
+            }
+        }
+        
+    } failure:^(NSError *err){
+        failure(err);
+    }];
+}
+
+- (void) doTempAccessSucess:(void (^)(BOOL))success Failure:(void (^)(NSError *))failure{
+    //get current ip address
+    NSString *currentIp = @"";
+    
+    [HWUserInfoService doPost:HWWIFI_RELATIVEURL_TEMPACESS params:currentIp success:^(NSString *res){
+        NSDictionary *responseDic = [res JSONObject];
+        
+        NSLog(@"%@",responseDic);
+        if (responseDic) {
+            if ([[responseDic objectForKey:@"errCode"] isEqualToString:@"000"]) {
+                success(YES);
+            }else{
+                //HW AlertView Show the Error message
+            }
+        }
+        
+    } failure:^(NSError *err){
+        failure(err);
+    }];
+}
+
+- (void) doTempAccess:(NSString *)ip Sucess:(void (^)(BOOL))success Failure:(void (^)(NSError *))failure{
+    
+}
+
+
+#pragma mark - Admin User Manipulation
+- (void)doEditUserWith:(HWUser *)user Type:(HWUserEditType)type Sucess:(void (^)(BOOL))success Failure:(void (^)(NSError *))failure{
+    NSString *opType = @"";
+    switch (type) {
+        case HWUserEditTypePut:{
+            opType = @"Put";
+        }
+            break;
+        case HWUserEditTypePatch:{
+            opType = @"Patch";
+        }
+            break;
+        case HWUserEditTypeDelete:{
+            opType = @"Delete";
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
+
+
+@end

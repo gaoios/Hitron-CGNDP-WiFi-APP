@@ -1,0 +1,370 @@
+//
+//  BaseService.m
+//  Shows
+//
+//  Created by Nathan.Li on 7/22/15.
+//  Copyright (c) 2015 Movit. All rights reserved.
+//
+
+#import "BaseService.h"
+#import "AppDelegate.h"
+#import "HWUtility.h"
+
+@interface AFHTTPTimeoutRequestSerializer : AFHTTPRequestSerializer
+@end
+@implementation AFHTTPTimeoutRequestSerializer
+- (NSMutableURLRequest *)requestWithMethod:(NSString *)method URLString:(NSString *)URLString parameters:(NSDictionary *)parameters error:(NSError *__autoreleasing *)error {
+    NSMutableURLRequest *request = [super requestWithMethod:method URLString:URLString parameters:parameters error:error];
+    [request setTimeoutInterval:30];
+    [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+    return request;
+}
+@end
+
+@implementation BaseService
+static AFHTTPSessionManager *manager = nil;
++ (AFHTTPSessionManager*) afmanager {
+    static dispatch_once_t token;
+    dispatch_once(&token, ^{
+        manager = [AFHTTPSessionManager manager];
+        manager.requestSerializer = [AFHTTPTimeoutRequestSerializer serializer];
+        manager.securityPolicy.allowInvalidCertificates = YES;
+        manager.securityPolicy.validatesDomainName = NO;
+        manager.responseSerializer = [[AFHTTPResponseSerializer alloc] init];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json",nil];
+        manager.requestSerializer.HTTPShouldHandleCookies = YES;
+        
+        [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+//        [manager.requestSerializer setValue:[GBUtility savedUser].token forHTTPHeaderField:@"token"];
+//        [self updateLanguage];
+//        
+        [manager.requestSerializer setQueryStringSerializationWithBlock:^NSString * (NSURLRequest * request, id parameters, NSError *  __autoreleasing * error) {
+            //return
+            return [parameters JSONString];
+        }];
+        
+        //        manager.operationQueue.maxConcurrentOperationCount = 1;
+    });
+    return manager;
+}
++ (void)updateToken:(NSString *)token {
+    [manager.requestSerializer setValue:token forHTTPHeaderField:@"token"];
+}
++ (void)updateLanguage {
+    NSString *languageId = [I18NController currentLanguageId];
+    [manager.requestSerializer setValue:languageId forHTTPHeaderField:@"language"];
+}
+
++ (NSURLSessionDataTask *) doGet:(NSString *)relativeURL params:(id)params success:(void (^)(NSString* res))success failure:(void (^)(NSError *e))failure {
+    NSLog(@"Get - url:%@ \nparams:%@", relativeURL,params);
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    relativeURL = [relativeURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    return [[self afmanager] GET:[NSString stringWithFormat:@"%@%@", BASEURL, relativeURL] parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSError *e = [self errorByAuth:result];
+        if (e) {
+            if (failure) {
+                failure(e);
+            }
+        } else {
+//            NSLog(@"Get - Success: Status Code: %ld", (long)task.response.statusCode);
+            NSLog(@"Result String: %@", result);
+            if (success) {
+                success(result);
+            }
+        }
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        NSHTTPURLResponse *response = error.userInfo[AFNetworkingOperationFailingURLResponseErrorKey];
+        NSInteger statusCode = response.statusCode;
+        NSLog(@"Get - Failed: Status Code: %ld", (long)statusCode);
+        NSLog(@"Error: %@", error);
+    }];
+    
+//    return [[self afmanager] GET:[NSString stringWithFormat:@"%@%@",BASEURL,relativeURL] parameters:params success:^(NSURLSessionTask *operation, id responseObject) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//        NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+//        NSError *e = [self errorByAuth:result];
+//        if (e) {
+//            if (failure) {
+//                failure(e);
+//            }
+//        } else {
+//            NSLog(@"Get - Success: Status Code: %ld", (long)operation.response.statusCode);
+//            NSLog(@"Result String: %@", result);
+//            if (success) {
+//                success(result);
+//            }
+//        }
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//        NSString *result = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
+//        NSLog(@"Get - Failed: Status Code: %ld", (long)operation.response.statusCode);
+//        NSLog(@"Error: %@, %@", error, result);
+//        NSError *e = [self errorByAuth:result];
+//        if (failure) {
+//            failure(e?e:error);
+//        }
+//    }];
+}
++ (NSURLSessionDataTask *) doPut:(NSString *)relativeURL params:(id)params success:(void (^)(NSString* res))success failure:(void (^)(NSError *e))failure {
+    NSLog(@"PUT - url:%@ \nparams:%@", relativeURL,params);
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    relativeURL = [relativeURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    return [[self afmanager] PUT:[NSString stringWithFormat:@"%@%@", BASEURL, relativeURL] parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSError *e = [self errorByAuth:result];
+        if (e) {
+            if (failure) {
+                failure(e);
+            }
+        } else {
+//            NSLog(@"Put - Success: Status Code: %ld", (long)task.response.statusCode);
+            NSLog(@"Result String: %@", result);
+            if (success) {
+                success(result);
+            }
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        NSHTTPURLResponse *response = error.userInfo[AFNetworkingOperationFailingURLResponseErrorKey];
+        NSInteger statusCode = response.statusCode;
+        NSLog(@"Get - Failed: Status Code: %ld", (long)statusCode);
+        NSLog(@"Error: %@", error);
+
+    }];
+    
+//    return [[self afmanager] PUT:[NSString stringWithFormat:@"%@%@",BASEURL,relativeURL] parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//        NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+//        NSError *e = [self errorByAuth:result];
+//        if (e) {
+//            if (failure) {
+//                failure(e);
+//            }
+//        } else {
+//            NSLog(@"Put - Success: Status Code: %ld", (long)operation.response.statusCode);
+//            NSLog(@"Result String: %@", result);
+//            if (success) {
+//                success(result);
+//            }
+//        }
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//        NSString *result = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
+//        NSLog(@"Put - Failed: Status Code: %ld", (long)operation.response.statusCode);
+//        NSLog(@"Error: %@, %@", error, result);
+//        NSError *e = [self errorByAuth:result];
+//        if (failure) {
+//            failure(e?e:error);
+//        }
+//    }];
+}
++ (NSURLSessionDataTask *) doPost:(NSString *)relativeURL params:(id)params success:(void (^)(NSString* res))success failure:(void (^)(NSError *e))failure {
+    NSLog(@"Post - url:%@ \nparams:%@", relativeURL,params);
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    relativeURL = [relativeURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    return [[self afmanager] POST:[NSString stringWithFormat:@"%@%@", BASEURL, relativeURL] parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSError *e = [self errorByAuth:result];
+        if (e) {
+            if (failure) {
+                failure(e);
+            }
+        } else {
+//            NSLog(@"Put - Success: Status Code: %ld", (long)task.response.statusCode);
+            NSLog(@"Result String: %@", result);
+            if (success) {
+                success(result);
+            }
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        NSHTTPURLResponse *response = error.userInfo[AFNetworkingOperationFailingURLResponseErrorKey];
+        NSInteger statusCode = response.statusCode;
+        NSLog(@"Get - Failed: Status Code: %ld", (long)statusCode);
+        NSLog(@"Error: %@", error);
+    }];
+    
+//    return [[self afmanager] POST:[NSString stringWithFormat:@"%@%@",BASEURL,relativeURL] parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//        NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+//        NSError *e = [self errorByAuth:result];
+//        if (e) {
+//            if (failure) {
+//                failure(e);
+//            }
+//        } else {
+//            NSLog(@"Post - Success: Status Code: %ld", (long)operation.response.statusCode);
+//            NSLog(@"Result String: %@", result);
+//            if (success) {
+//                success(result);
+//            }
+//        }
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//        NSString *result = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
+//        NSLog(@"Post - Failed: Status Code: %ld", (long)operation.response.statusCode);
+//        NSLog(@"Error: %@, %@", error, result);
+//        NSError *e = [self errorByAuth:result];
+//        if (failure) {
+//            failure(e?e:error);
+//        }
+//    }];
+}
++ (NSURLSessionDataTask *) doDelete:(NSString *)relativeURL params:(id)params success:(void (^)(NSString* res))success failure:(void (^)(NSError *e))failure {
+    NSLog(@"Delete - url:%@ \nparams:%@", relativeURL,params);
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    relativeURL = [relativeURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    return [[self afmanager] DELETE:[NSString stringWithFormat:@"%@%@", BASEURL, relativeURL] parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSError *e = [self errorByAuth:result];
+        if (e) {
+            if (failure) {
+                failure(e);
+            }
+        } else {
+//            NSLog(@"Put - Success: Status Code: %ld", (long)task.response.statusCode);
+            NSLog(@"Result String: %@", result);
+            if (success) {
+                success(result);
+            }
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        NSHTTPURLResponse *response = error.userInfo[AFNetworkingOperationFailingURLResponseErrorKey];
+        NSInteger statusCode = response.statusCode;
+        NSLog(@"Get - Failed: Status Code: %ld", (long)statusCode);
+        NSLog(@"Error: %@", error);
+    }];
+    
+//    return [[self afmanager] DELETE:[NSString stringWithFormat:@"%@%@",BASEURL,relativeURL] parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//        NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+//        NSError *e = [self errorByAuth:result];
+//        if (e) {
+//            if (failure) {
+//                failure(e);
+//            }
+//        } else {
+//            NSLog(@"Delete - Success: Status Code: %ld", (long)operation.response.statusCode);
+//            NSLog(@"Result String: %@", result);
+//            if (success) {
+//                success(result);
+//            }
+//        }
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//        NSString *result = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
+//        NSLog(@"Delete - Failed: Status Code: %ld", (long)operation.response.statusCode);
+//        NSLog(@"Error: %@, %@", error, result);
+//        NSError *e = [self errorByAuth:result];
+//        if (failure) {
+//            failure(e?e:error);
+//        }
+//    }];
+}
+
+
++ (NSError *) errorByAuth:(NSString *)responesStr {
+//    NSDictionary *dict = [responesStr mj_JSONObject];
+//    if (![dict[@"result"] boolValue] && [dict[@"type"] integerValue] == -1 && [GBUtility savedUser]) {
+//        [HIWUtility clearSavedUserInfo];
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"UserLogoutNotification" object:nil];
+//        [HIWUtility showAlertView:nil message:I18NString(@"您的登录状态已失效，请重新登录", nil) buttonClickedBlock:^(NSInteger buttonIndex) {
+//            [[AppDelegate instance] showLoginViewWithLoginSuccessBlock:nil];
+//            UITabBarController *vc = (UITabBarController*)[AppDelegate instance].window.rootViewController;
+//            vc.selectedIndex = 0;
+//        }];
+//        NSError *error = [[NSError alloc] initWithDomain:@"GoodBaby" code:-1 userInfo:@{NSLocalizedDescriptionKey:@""}];
+//        return error;
+//    }
+    return nil;
+}
+
+//+ (AFHTTPRequestOperation *)downloadFile:(NSString *)url saveToPath:(NSString *)path success:(void (^)(id))success failure:(void (^)(NSError *))failure progress:(void (^)(NSUInteger, long long, long long))progress {
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+//    AFHTTPRequestOperation *operation =[[AFHTTPRequestOperation alloc] initWithRequest:request];
+//    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//        if (success) {
+//            success(path);
+//        }
+//    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//        if (failure) {
+//            failure(error);
+//        }
+//    }];
+
+//    NSMutableURLRequest *request = [[self afmanager].requestSerializer requestWithMethod:@"GET" URLString:url parameters:nil error:nil];
+//    AFHTTPRequestOperation *operation = [[self afmanager] HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//        if (success) {
+//            success([NSData dataWithContentsOfFile:path]);
+//        }
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//        if (failure) {
+//            failure(error);
+//        }
+//    }];
+//    if (path.length) {
+//        operation.outputStream = [NSOutputStream outputStreamToFileAtPath:path append:NO];
+//    }
+//    if (progress) {
+//        [operation setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+//            progress(bytesRead,totalBytesRead,totalBytesExpectedToRead);
+//        }];
+//    }
+//    [[self afmanager].operationQueue addOperation:operation];
+//    return operation;
+//}
+
+//+ (AFHTTPRequestOperation *)uploadFiles:(NSArray *)fileDatas fileNames:(NSArray *)fileNames mimeTypes:(NSArray *)mimeTypes url:(NSString *)url params:(id)params resultBlock:(ResultBlock)result {
+//    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+//    return [[self afmanager] POST:UPLOADURL parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+//        [fileDatas enumerateObjectsUsingBlock:^(id fileData, NSUInteger idx, BOOL *stop) {
+//            [formData appendPartWithFileData:fileData name:@"file" fileName:fileNames[idx] mimeType:mimeTypes[idx]];
+//        }];
+//    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//        NSDictionary* dict = [operation.responseData mj_JSONObject];
+//        NSLog(@"%@",dict);
+//        if (result) {
+//            NSArray *messages = dict[@"response"][@"message"];
+//            result(messages.count,nil,messages);
+//        }
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//#if defined(DEBUG)
+//        NSString *resultRes = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
+//        NSLog(@"Error: %@, %@", error, resultRes);
+//#endif
+//        if (result) {
+//            result(0,error.localizedDescription,nil);
+//        }
+//    }];
+//}
+//+ (AFHTTPRequestOperation *)uploadImages:(NSArray *)imageDatas resultBlock:(ResultBlock)result {
+//    NSMutableArray *fileDatas = [[NSMutableArray alloc] init];
+//    NSMutableArray *fileNames = [[NSMutableArray alloc] init];
+//    NSMutableArray *mimeTypes = [[NSMutableArray alloc] init];
+//    for (UIImage *image in imageDatas) {
+//        [fileDatas addObject:UIImageJPEGRepresentation(image, 0.1)];
+//        [fileNames addObject:@"image.jpg"];
+//        [mimeTypes addObject:@"image/jpg"];
+//    }
+//    return [self uploadFiles:fileDatas fileNames:fileNames mimeTypes:mimeTypes url:UPLOADURL params:nil resultBlock:result];
+//}
+@end

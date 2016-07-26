@@ -1,0 +1,32 @@
+//
+//  BaseService.h
+//  Shows
+//
+//  Created by Nathan.Li on 7/22/15.
+//  Copyright (c) 2015 Chunhui Li. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "MJExtension.h"
+#import "AFNetworking.h"
+#import "Constant.h"
+
+
+typedef void(^ResultBlock)(BOOL isSuccess, NSString* errorMsg, id res);
+typedef void(^PageResultBlock)(BOOL isSuccess, NSString* errorMsg, id res, NSInteger totalCount, NSInteger page);
+
+@interface BaseService : NSObject
++ (AFHTTPRequestOperationManager*) afmanager;
++ (AFHTTPRequestOperation *) doGet:(NSString *)relativeURL params:(id)params success:(void (^)(NSString* res))success failure:(void (^)(NSError *e))failure;
++ (AFHTTPRequestOperation *) doPut:(NSString *)relativeURL params:(id)params success:(void (^)(NSString* res))success failure:(void (^)(NSError *e))failure;
++ (AFHTTPRequestOperation *) doPost:(NSString *)relativeURL params:(id)params success:(void (^)(NSString* res))success failure:(void (^)(NSError *e))failure;
++ (AFHTTPRequestOperation *) doDelete:(NSString *)relativeURL params:(id)params success:(void (^)(NSString* res))success failure:(void (^)(NSError *e))failure;
+
++ (AFHTTPRequestOperation *)downloadFile:(NSString *)url saveToPath:(NSString *)path success:(void (^)(id res))success failure:(void (^)(NSError *e))failure progress:(void (^)(NSUInteger, long long, long long))progress;
+
++ (AFHTTPRequestOperation *)uploadImages:(NSArray *)imageDatas resultBlock:(ResultBlock)result;
+
++ (void)updateToken:(NSString*)token;
++ (void)updateLanguage;
+@end

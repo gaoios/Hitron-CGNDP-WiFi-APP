@@ -1,0 +1,101 @@
+//
+//  Constant.h
+//  linju
+//
+//  Created by Nathan.Li on 9/17/15.
+//  Copyright (c) 2015 Chunhui Li. All rights reserved.
+//
+
+
+
+//************************************* PROD Server ***************************************************
+#ifdef PROD
+#define APP_SCHEME @"com.nuskin.nucalendarprod"
+
+#define UPLOADURL @""
+#define BASEURL  @""
+
+
+// For Share
+#define BAIDUAPPID @"a0fbe1ca8b"
+#define BAIDUCID @"PROD"
+#define SHARESDKAPP @"1336ec524567f"
+#define WEIBOKEY @"3465112993"
+#define WEIBOSECRET @"291911ce917395f54258af1b60d072ce"
+#define WECHATAPPID @"wx71248df1d9c8c1fc"
+#define WECHATSECRET @"b71dab85edd545a2dca3e7893692cb57"
+#define QQAPPID @"1105419178"
+#define QQSECRET @"xWaVZ8jPiKYIlZqb"
+
+#define JPUSHAPPID @"6f89670b97923fbb43c09130"
+#define JPUSHSECRET @"6d3d1e7e1c2c0154bfa98257"
+
+#define WEIBOURL @"https://gbsmartbabytest.chinacloudsites.cn"
+
+//************************************* UAT Server ***************************************************
+#elif UAT
+#define APP_SCHEME @"com.nuskin.nucalendarstage"
+
+#define UPLOADURL @""
+#define BASEURL  @""
+
+// For Share
+#define BAIDUAPPID @"a0fbe1ca8b"
+#define BAIDUCID @"UAT"
+#define SHARESDKAPP @"1336ec524567f"
+#define WEIBOKEY @"3465112993"
+#define WEIBOSECRET @"291911ce917395f54258af1b60d072ce"
+#define WECHATAPPID @"wx71248df1d9c8c1fc"
+#define WECHATSECRET @"b71dab85edd545a2dca3e7893692cb57"
+#define QQAPPID @"1105419178"
+#define QQSECRET @"xWaVZ8jPiKYIlZqb"
+
+#define JPUSHAPPID @"6f89670b97923fbb43c09130"
+#define JPUSHSECRET @"6d3d1e7e1c2c0154bfa98257"
+
+#define WEIBOURL @"https://gbsmartbabytest.chinacloudsites.cn"
+//************************************* QA Server ***************************************************
+#elif QA
+#define APP_SCHEME @"com.nuskin.nucalendarstage"
+
+#define UPLOADURL @""
+#define BASEURL  @"https://gbsmartbabytest.chinacloudsites.cn/rest/"
+
+// For Share
+#define BAIDUAPPID @"a0fbe1ca8b"
+#define BAIDUCID @"QA"
+#define SHARESDKAPP @"1336ec524567f"
+#define WEIBOKEY @"3465112993"
+#define WEIBOSECRET @"291911ce917395f54258af1b60d072ce"
+#define WECHATAPPID @"wx71248df1d9c8c1fc"
+#define WECHATSECRET @"b71dab85edd545a2dca3e7893692cb57"
+#define QQAPPID @"1105419178"
+#define QQSECRET @"xWaVZ8jPiKYIlZqb"
+
+#define JPUSHAPPID @"6f89670b97923fbb43c09130"
+#define JPUSHSECRET @"6d3d1e7e1c2c0154bfa98257"
+
+#define WEIBOURL @"https://gbsmartbabytest.chinacloudsites.cn"
+//**************************************** DEV Server ************************************************
+#else
+#define APP_SCHEME @"com.nuskin.nucalendarstage"
+
+#define UPLOADURL @""
+#define BASEURL  @"http://101.200.157.251:8081"
+
+// For Share
+#define BAIDUAPPID @"a0fbe1ca8b"
+#define BAIDUCID @"DEV"
+#define SHARESDKAPP @"1336ec524567f"
+#define WEIBOKEY @"3465112993"
+#define WEIBOSECRET @"291911ce917395f54258af1b60d072ce"
+#define WECHATAPPID @"wx71248df1d9c8c1fc"
+#define WECHATSECRET @"b71dab85edd545a2dca3e7893692cb57"
+#define QQAPPID @"1105419178"
+#define QQSECRET @"xWaVZ8jPiKYIlZqb"
+
+#define JPUSHAPPID @"6f89670b97923fbb43c09130"
+#define JPUSHSECRET @"6d3d1e7e1c2c0154bfa98257"
+
+#define WEIBOURL @"https://gbsmartbabytest.chinacloudsites.cn"
+#endif

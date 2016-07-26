@@ -1,0 +1,13 @@
+//
+//  ConnectTestService.h
+//  HitronWifi
+//
+//  Created by ourtrip on 16/6/1.
+//  Copyright © 2016年 Neo.Gao. All rights reserved.
+//
+
+#import "BaseService.h"
+
+@interface ConnectTestService : BaseService
+
+@end

@@ -1,0 +1,86 @@
+//
+//  HWResetPasswordController.m
+//  HitronWifi
+//
+//  Created by ourtrip on 16/6/7.
+//  Copyright © 2016年 Movit. All rights reserved.
+//
+
+#import "HWResetPasswordController.h"
+#import "HWUserManager.h"
+
+@interface HWResetPasswordController ()
+
+
+@end
+
+@implementation HWResetPasswordController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    self.navigationController.navigationBar.hidden = NO;
+}
+
+
+- (IBAction)leftHeaderBtnPressed:(id)sender{
+    NSLog(@"1");
+    [super leftHeaderBtnPressed:sender];
+}
+
+- (IBAction)rightHeaderBtnPressed:(id)sender{
+    NSLog(@"2");
+    
+    if ([self didCheckPassword]) {
+        NSString *opwd = self.tfOldPassword.text;
+        NSString *npwd = self.tfNewPassword.text;
+        NSString *cpwd = self.tfChceckPassword.text;
+        
+        NSString *name = [HWUserManager getUserName];
+        
+        [[HWUserManager getInstance] setUserPassWord:opwd NewPassword:npwd CheckNewPassword:cpwd Name:name Sucess:^(BOOL result){
+            //show sucess
+            [super leftHeaderBtnPressed:sender];
+        } Failure:^(NSError *err){
+            //show error
+        }];
+    }else{
+        NSLog(@"Error");
+    }
+}
+
+
+- (BOOL)didCheckPassword{
+    if ([self.tfOldPassword.text length] == 0 || [self.tfNewPassword.text length] == 0 || [self.tfChceckPassword.text length] == 0) {
+        return NO;
+    }
+    
+    if (!([self.tfOldPassword.text length] < 32 && [self.tfOldPassword.text length] > 8)) {
+        return NO;
+    }
+    
+    if (!([self.tfNewPassword.text length] < 32 && [self.tfNewPassword.text length] > 8)) {
+        return NO;
+    }
+    
+    if (!([self.tfChceckPassword.text length] < 32 && [self.tfChceckPassword.text length] > 8)) {
+        return NO;
+    }
+    
+    if (![self.tfNewPassword.text isEqualToString:self.tfChceckPassword.text]) {
+        return NO;
+    }
+    
+    return YES;
+}
+
+
+@end

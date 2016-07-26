@@ -1,0 +1,73 @@
+//
+//  HWUserManager.m
+//  HitronWifi
+//
+//  Created by ourtrip on 16/6/7.
+//  Copyright © 2016年 Movit. All rights reserved.
+//
+
+#import "HWUserManager.h"
+#import "HWUserInfoService.h"
+#import "HWUser.h"
+
+@implementation HWUserManager
+
++(HWUserManager *)getInstance{
+    static dispatch_once_t once;
+    static id instance;
+    
+    dispatch_once(&once, ^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
+
+- (void) addUserWithUserInfo:(HWUser *) userInfo{
+}
+
+- (void) getAllUserSucess:(void (^)(NSArray *))success Failure:(void (^)(NSError *))failure {
+    NSString *relativeUrl = @"/1/Device/Users/";
+    
+    [HWUserInfoService doGet:relativeUrl params:@"" success:^(NSString *res){
+        NSDictionary *responseDic = [res JSONObject];
+        NSArray *user_list = [responseDic objectForKey:@"Users_List"];
+        
+        [HWUser setupObjectClassInArray:^NSDictionary *{
+            return @{
+                        @"Hosts_List":@"HWHost"
+                     };
+        }];
+        NSArray *user_model_list = [HWUser objectArrayWithKeyValuesArray:user_list];
+        if (success && user_model_list) {
+            success(user_model_list);
+        }
+    } failure:^(NSError *err){
+        NSLog(@"Reponse:%@",err);
+        failure(err);
+    }];
+}
+
+- (void) getUser:(HWUser *)user Sucess:(void (^)(HWUser *))success Failure:(void (^)(NSError *))failure{
+    NSString *relativeUrl = @"/1/Device/Users/";
+    NSString *relativeUserUrl = [NSString stringWithFormat:@"%@%@",relativeUrl,user.userID];
+    
+    [HWUserInfoService doGet:relativeUserUrl params:@"" success:^(NSString *res){
+        NSDictionary *responseDic = [res JSONObject];
+        
+        HWUser *responseUser = [HWUser objectWithKeyValues:responseDic];
+        success(responseUser);
+        
+        NSLog(@"Reponse:%@",relativeUrl);
+    } failure:^(NSError *err){
+        failure(err);
+    }];
+}
+
+- (BOOL) removeUser:(HWUser *)user{
+    return YES;
+}
+
+
+
+
+@end

@@ -1,0 +1,112 @@
+//
+//  HWUserManager.h
+//  HitronWifi
+//
+//  Created by ourtrip on 16/6/7.
+//  Copyright © 2016年 Movit. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "BaseModel.h"
+
+@class HWUser;
+
+
+@interface HWUserManager : NSObject
+
+typedef enum {
+    HWUserEditTypePut,
+    HWUserEditTypePatch,
+    HWUserEditTypeDelete
+} HWUserEditType;
+
++ (HWUserManager *)getInstance;
+
++ (NSString *)getUserName;
+
++ (NSString *)getUserID;
+
+
+//User Data Structure Manipulation
+
+/**
+ *  Get All User Model Array
+ *
+ *  @param success return the model array containt HWUser
+ *  @param failure return the Error
+ */
+- (void) getAllUserSucess:(void (^)(NSArray *users))success Failure:(void (^)(NSError *err))failure;
+
+/**
+ *  Remove Specified User
+ *
+ *  @param user    the user will be removed
+ *  @param success the response string
+ *  @param failure the error
+ */
+- (void) removeUser:(HWUser *) user Sucess:(void (^)(NSString *res))success Failure:(void (^)(NSError *err))failure;;
+
+/**
+ *  Get Specified User info
+ *
+ *  @param user    a initialized user object containt property userID
+ *  @param success a user object containt all property
+ *  @param failure the error
+ */
+- (void) getUser:(HWUser *) user Sucess:(void (^)(HWUser *user))success Failure:(void (^)(NSError *err))failure;
+
+
+
+//Single User Access
+
+/**
+ *  reset user password
+ *
+ *  @param oldPassword   old password length 8~32
+ *  @param newPassword   new password length 8~32
+ *  @param checkPassword check password length 8~32
+ *  @param name          the current user name Max length 32
+ */
+- (void) setUserPassWord:(NSString *) oldPassword NewPassword:(NSString *)newPassword CheckNewPassword:(NSString *)checkPassword Name:(NSString *)name Sucess:(void (^)(BOOL result))success Failure:(void (^)(NSError *err))failure;
+
+/**
+ *  user logout
+ *
+ *  @param userID userID
+ *  @param mac    the current device mac address
+ */
+- (void) doUserLogoutWith:(NSString *)userID Mac:(NSString *)mac;
+
+
+//Admin User Manipulation
+
+- (void) doAddNewUserWithName:(NSString *)name Password:(NSString *)password CheckPassword:(NSString *)checkPassword Gender:(NSString *)gender NickName:(NSString *)nickName Icon:(NSString *)icon Role:(NSString *)role FWLevel:(NSString *)fwLevel;
+
+/**
+ *  add new user
+ *
+ *  @param user the new user object
+ */
+- (void) doAddNewUserWith:(HWUser *)user Sucess:(void (^)(NSString *res))success Failure:(void (^)(NSError *err))failure;
+
+/**
+ *  edit the user
+ *
+ *  @param user the should be edited
+ *  @param type edite type:delete,update,put
+ */
+- (void) doEditUserWith:(HWUser *)user Type:(HWUserEditType)type Sucess:(void (^)(BOOL res))success Failure:(void (^)(NSError *err))failure;
+
+/**
+ *  Application for quick access
+ *
+ *  @param mac     the device ip address
+ */
+- (void) doTempAccessSucess:(void (^)(BOOL res))success Failure:(void (^)(NSError *err))failure;
+
+- (void) doTempAccess:(NSString *)ip Sucess:(void (^)(BOOL res))success Failure:(void (^)(NSError *err))failure;
+
+
+
+
+@end

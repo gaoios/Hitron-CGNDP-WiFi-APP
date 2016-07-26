@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9c0ecdba-baf9-7344-b426-0a928fa89b25++4864",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "9c0ecdba-baf9-7344-b426-0a928fa89b25++4864" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9c0ecdba-baf9-7344-b426-0a928fa89b25++4864" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BAD300AF-5681-4CEA-B539-5D4245EC3FDF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9c0ecdba-baf9-7344-b426-0a928fa89b25++4864" : "Hitron%20WiFi\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "HitronWifi",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "HitronAPP_IOS\/HitronWifi\/HitronWifi.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/leon.lu@svn-1630.movit-tech.com\/svn\/Hitron-CGNDP-WiFi-APP",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9c0ecdba-baf9-7344-b426-0a928fa89b25++4864"
+    }
+  ]
+}

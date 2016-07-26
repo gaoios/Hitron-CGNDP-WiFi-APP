@@ -1,0 +1,1035 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		831DB7361D065D3A00A79D67 /* HWUserInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DB7351D065D3A00A79D67 /* HWUserInfoController.m */; };
+		831DB73C1D065DB300A79D67 /* HWBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DB73B1D065DB300A79D67 /* HWBaseCell.m */; };
+		831DB73F1D0661CD00A79D67 /* HWUserInfoDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DB73E1D0661CD00A79D67 /* HWUserInfoDataController.m */; };
+		831DB7421D06621E00A79D67 /* HWUserAvatorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DB7411D06621E00A79D67 /* HWUserAvatorCell.m */; };
+		831DB7471D06665300A79D67 /* HWUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DB7461D06665300A79D67 /* HWUserManager.m */; };
+		831DB74A1D0666D900A79D67 /* HWUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DB7491D0666D900A79D67 /* HWUser.m */; };
+		831DB74D1D06974E00A79D67 /* HWHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DB74C1D06974E00A79D67 /* HWHost.m */; };
+		831DB7501D069A8E00A79D67 /* ConnectTestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DB74F1D069A8E00A79D67 /* ConnectTestService.m */; };
+		831DB7531D069A9E00A79D67 /* BaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DB7521D069A9E00A79D67 /* BaseService.m */; };
+		831DB7561D069AD200A79D67 /* HWUserInfoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DB7551D069AD200A79D67 /* HWUserInfoService.m */; };
+		831DB7591D06C10600A79D67 /* HWUserTitleIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DB7581D06C10600A79D67 /* HWUserTitleIconCell.m */; };
+		831DB75C1D06C11C00A79D67 /* HWUserTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DB75B1D06C11C00A79D67 /* HWUserTitleCell.m */; };
+		831DB75F1D06C7C800A79D67 /* HWBaseCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DB75E1D06C7C800A79D67 /* HWBaseCellModel.m */; };
+		831DB7611D06C99000A79D67 /* HWViewDisplay.plist in Resources */ = {isa = PBXBuildFile; fileRef = 831DB7601D06C99000A79D67 /* HWViewDisplay.plist */; };
+		831DB7641D06F16B00A79D67 /* HWResetPasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DB7631D06F16B00A79D67 /* HWResetPasswordController.m */; };
+		831DF4B01CFD392C004FFAF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DF4AF1CFD392C004FFAF8 /* main.m */; };
+		831DF4B31CFD392C004FFAF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DF4B21CFD392C004FFAF8 /* AppDelegate.m */; };
+		831DF4B91CFD392C004FFAF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831DF4B71CFD392C004FFAF8 /* Main.storyboard */; };
+		831DF4BB1CFD392C004FFAF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831DF4BA1CFD392C004FFAF8 /* Assets.xcassets */; };
+		831DF4BE1CFD392C004FFAF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831DF4BC1CFD392C004FFAF8 /* LaunchScreen.storyboard */; };
+		831DF4C91CFD392C004FFAF8 /* HitronWifiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DF4C81CFD392C004FFAF8 /* HitronWifiTests.m */; };
+		831DF4D41CFD392C004FFAF8 /* HitronWifiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DF4D31CFD392C004FFAF8 /* HitronWifiUITests.m */; };
+		831DF4F01CFD6695004FFAF8 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DF4EC1CFD6695004FFAF8 /* Utility.m */; };
+		831DF4F11CFD6695004FFAF8 /* UIView+IBInspect.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DF4EF1CFD6695004FFAF8 /* UIView+IBInspect.m */; };
+		831DF4F61CFD671B004FFAF8 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 831DF4F51CFD671B004FFAF8 /* loading.gif */; };
+		831DF5051CFD67B8004FFAF8 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DF4FA1CFD67B8004FFAF8 /* BaseModel.m */; };
+		831DF5071CFD67B8004FFAF8 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DF4FE1CFD67B8004FFAF8 /* CollectionViewController.m */; };
+		831DF5081CFD67B8004FFAF8 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DF5001CFD67B8004FFAF8 /* NavigationController.m */; };
+		831DF5091CFD67B8004FFAF8 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DF5021CFD67B8004FFAF8 /* TableViewController.m */; };
+		831DF50A1CFD67B8004FFAF8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DF5041CFD67B8004FFAF8 /* ViewController.m */; };
+		83915F201CFD951C0087C551 /* HIWUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 83915F1F1CFD951C0087C551 /* HIWUtility.m */; };
+		839863491CFE696D00205DE5 /* ConnectTestVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 839863481CFE696D00205DE5 /* ConnectTestVController.m */; };
+		8398634C1CFE699A00205DE5 /* I18NController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8398634B1CFE699A00205DE5 /* I18NController.m */; };
+		8398634F1CFE6ACF00205DE5 /* NMSystemSettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8398634E1CFE6ACF00205DE5 /* NMSystemSettingManager.m */; };
+		839928D61D0553960011B9C4 /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839928D41D0553950011B9C4 /* Second.storyboard */; };
+		AD034ADF419EBD9FA4CE87E5 /* libPods-HitronWifi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3AA0988FB681972E9663765 /* libPods-HitronWifi.a */; };
+		AD0E03601D01685B00AD8B4C /* avatar_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03341D01685B00AD8B4C /* avatar_frame.png */; };
+		AD0E03611D01685B00AD8B4C /* bg_home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03351D01685B00AD8B4C /* bg_home.jpg */; };
+		AD0E03621D01685B00AD8B4C /* bg_jonesphone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03361D01685B00AD8B4C /* bg_jonesphone.jpg */; };
+		AD0E03631D01685B00AD8B4C /* bg_login.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03371D01685B00AD8B4C /* bg_login.jpg */; };
+		AD0E03641D01685B00AD8B4C /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03381D01685B00AD8B4C /* button.png */; };
+		AD0E03651D01685B00AD8B4C /* downline.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03391D01685B00AD8B4C /* downline.png */; };
+		AD0E03661D01685B00AD8B4C /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E033A1D01685B00AD8B4C /* help.png */; };
+		AD0E03671D01685B00AD8B4C /* ico_1.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E033B1D01685B00AD8B4C /* ico_1.png */; };
+		AD0E03681D01685B00AD8B4C /* ico_2.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E033C1D01685B00AD8B4C /* ico_2.png */; };
+		AD0E03691D01685B00AD8B4C /* ico_3.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E033D1D01685B00AD8B4C /* ico_3.png */; };
+		AD0E036A1D01685B00AD8B4C /* ico_4.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E033E1D01685B00AD8B4C /* ico_4.png */; };
+		AD0E036B1D01685B00AD8B4C /* ico_5.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E033F1D01685B00AD8B4C /* ico_5.png */; };
+		AD0E036C1D01685B00AD8B4C /* ico_6.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03401D01685B00AD8B4C /* ico_6.png */; };
+		AD0E036D1D01685B00AD8B4C /* ico_7.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03411D01685B00AD8B4C /* ico_7.png */; };
+		AD0E036E1D01685B00AD8B4C /* ico_8.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03421D01685B00AD8B4C /* ico_8.png */; };
+		AD0E036F1D01685B00AD8B4C /* ico_arrow1.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03431D01685B00AD8B4C /* ico_arrow1.png */; };
+		AD0E03701D01685B00AD8B4C /* ico_arrow2.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03441D01685B00AD8B4C /* ico_arrow2.png */; };
+		AD0E03711D01685B00AD8B4C /* ico_back.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03451D01685B00AD8B4C /* ico_back.png */; };
+		AD0E03721D01685B00AD8B4C /* ico_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03461D01685B00AD8B4C /* ico_camera.png */; };
+		AD0E03731D01685B00AD8B4C /* ico_password.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03471D01685B00AD8B4C /* ico_password.png */; };
+		AD0E03741D01685B00AD8B4C /* ico_quickaccess.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03481D01685B00AD8B4C /* ico_quickaccess.png */; };
+		AD0E03751D01685B00AD8B4C /* ico_reconnect.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03491D01685B00AD8B4C /* ico_reconnect.png */; };
+		AD0E03761D01685B00AD8B4C /* ico_user.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E034A1D01685B00AD8B4C /* ico_user.png */; };
+		AD0E03771D01685B00AD8B4C /* icon_about.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E034B1D01685B00AD8B4C /* icon_about.png */; };
+		AD0E03781D01685B00AD8B4C /* icon_jonephone.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E034C1D01685B00AD8B4C /* icon_jonephone.png */; };
+		AD0E03791D01685B00AD8B4C /* icon_networkmapping.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E034D1D01685B00AD8B4C /* icon_networkmapping.png */; };
+		AD0E037A1D01685B00AD8B4C /* icon_otification.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E034E1D01685B00AD8B4C /* icon_otification.png */; };
+		AD0E037B1D01685B00AD8B4C /* icon_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E034F1D01685B00AD8B4C /* icon_photo.png */; };
+		AD0E037C1D01685B00AD8B4C /* icon_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03501D01685B00AD8B4C /* icon_setting.png */; };
+		AD0E037D1D01685B00AD8B4C /* icon_usermanageme.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03511D01685B00AD8B4C /* icon_usermanageme.png */; };
+		AD0E037E1D01685B00AD8B4C /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03521D01685B00AD8B4C /* loading.gif */; };
+		AD0E037F1D01685B00AD8B4C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03531D01685B00AD8B4C /* logo.png */; };
+		AD0E03801D01685B00AD8B4C /* off.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03541D01685B00AD8B4C /* off.png */; };
+		AD0E03811D01685B00AD8B4C /* on.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03551D01685B00AD8B4C /* on.png */; };
+		AD0E03821D01685B00AD8B4C /* online.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03561D01685B00AD8B4C /* online.png */; };
+		AD0E03831D01685B00AD8B4C /* type_pad.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03571D01685B00AD8B4C /* type_pad.png */; };
+		AD0E03841D01685B00AD8B4C /* type_pc.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03581D01685B00AD8B4C /* type_pc.png */; };
+		AD0E03851D01685B00AD8B4C /* type_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E03591D01685B00AD8B4C /* type_phone.png */; };
+		AD0E03861D01685B00AD8B4C /* uaer_daughter.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E035A1D01685B00AD8B4C /* uaer_daughter.png */; };
+		AD0E03871D01685B00AD8B4C /* uaer_father.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E035B1D01685B00AD8B4C /* uaer_father.png */; };
+		AD0E03881D01685B00AD8B4C /* uaer_mother.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E035C1D01685B00AD8B4C /* uaer_mother.png */; };
+		AD0E03891D01685B00AD8B4C /* uaer_son.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E035D1D01685B00AD8B4C /* uaer_son.png */; };
+		AD0E038A1D01685B00AD8B4C /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E035E1D01685B00AD8B4C /* user.png */; };
+		AD0E038B1D01685B00AD8B4C /* user_press.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0E035F1D01685B00AD8B4C /* user_press.png */; };
+		ADC85F191D018BDF006D9750 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC85F181D018BDF006D9750 /* LoginViewController.m */; };
+		ADC85F1C1D018BF2006D9750 /* UserGuideLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC85F1B1D018BF2006D9750 /* UserGuideLineViewController.m */; };
+		ADC85F1F1D018C6A006D9750 /* ScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC85F1E1D018C6A006D9750 /* ScanQRCodeViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		831DF4C51CFD392C004FFAF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 831DF4A31CFD392C004FFAF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 831DF4AA1CFD392C004FFAF8;
+			remoteInfo = HitronWifi;
+		};
+		831DF4D01CFD392C004FFAF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 831DF4A31CFD392C004FFAF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 831DF4AA1CFD392C004FFAF8;
+			remoteInfo = HitronWifi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		831DB7341D065D3A00A79D67 /* HWUserInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWUserInfoController.h; sourceTree = "<group>"; };
+		831DB7351D065D3A00A79D67 /* HWUserInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWUserInfoController.m; sourceTree = "<group>"; };
+		831DB73A1D065DB300A79D67 /* HWBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWBaseCell.h; sourceTree = "<group>"; };
+		831DB73B1D065DB300A79D67 /* HWBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWBaseCell.m; sourceTree = "<group>"; };
+		831DB73D1D0661CD00A79D67 /* HWUserInfoDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWUserInfoDataController.h; sourceTree = "<group>"; };
+		831DB73E1D0661CD00A79D67 /* HWUserInfoDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWUserInfoDataController.m; sourceTree = "<group>"; };
+		831DB7401D06621E00A79D67 /* HWUserAvatorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWUserAvatorCell.h; sourceTree = "<group>"; };
+		831DB7411D06621E00A79D67 /* HWUserAvatorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWUserAvatorCell.m; sourceTree = "<group>"; };
+		831DB7451D06665300A79D67 /* HWUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWUserManager.h; sourceTree = "<group>"; };
+		831DB7461D06665300A79D67 /* HWUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWUserManager.m; sourceTree = "<group>"; };
+		831DB7481D0666D900A79D67 /* HWUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWUser.h; sourceTree = "<group>"; };
+		831DB7491D0666D900A79D67 /* HWUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWUser.m; sourceTree = "<group>"; };
+		831DB74B1D06974E00A79D67 /* HWHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWHost.h; sourceTree = "<group>"; };
+		831DB74C1D06974E00A79D67 /* HWHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHost.m; sourceTree = "<group>"; };
+		831DB74E1D069A8E00A79D67 /* ConnectTestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectTestService.h; sourceTree = "<group>"; };
+		831DB74F1D069A8E00A79D67 /* ConnectTestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectTestService.m; sourceTree = "<group>"; };
+		831DB7511D069A9E00A79D67 /* BaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseService.h; sourceTree = "<group>"; };
+		831DB7521D069A9E00A79D67 /* BaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseService.m; sourceTree = "<group>"; };
+		831DB7541D069AD200A79D67 /* HWUserInfoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWUserInfoService.h; sourceTree = "<group>"; };
+		831DB7551D069AD200A79D67 /* HWUserInfoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWUserInfoService.m; sourceTree = "<group>"; };
+		831DB7571D06C10600A79D67 /* HWUserTitleIconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWUserTitleIconCell.h; sourceTree = "<group>"; };
+		831DB7581D06C10600A79D67 /* HWUserTitleIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWUserTitleIconCell.m; sourceTree = "<group>"; };
+		831DB75A1D06C11C00A79D67 /* HWUserTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWUserTitleCell.h; sourceTree = "<group>"; };
+		831DB75B1D06C11C00A79D67 /* HWUserTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWUserTitleCell.m; sourceTree = "<group>"; };
+		831DB75D1D06C7C800A79D67 /* HWBaseCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWBaseCellModel.h; sourceTree = "<group>"; };
+		831DB75E1D06C7C800A79D67 /* HWBaseCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWBaseCellModel.m; sourceTree = "<group>"; };
+		831DB7601D06C99000A79D67 /* HWViewDisplay.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HWViewDisplay.plist; sourceTree = "<group>"; };
+		831DB7621D06F16B00A79D67 /* HWResetPasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWResetPasswordController.h; sourceTree = "<group>"; };
+		831DB7631D06F16B00A79D67 /* HWResetPasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWResetPasswordController.m; sourceTree = "<group>"; };
+		831DF4AB1CFD392C004FFAF8 /* HitronWifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitronWifi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		831DF4AF1CFD392C004FFAF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		831DF4B11CFD392C004FFAF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		831DF4B21CFD392C004FFAF8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		831DF4B81CFD392C004FFAF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		831DF4BA1CFD392C004FFAF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		831DF4BD1CFD392C004FFAF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		831DF4BF1CFD392C004FFAF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		831DF4C41CFD392C004FFAF8 /* HitronWifiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HitronWifiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		831DF4C81CFD392C004FFAF8 /* HitronWifiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitronWifiTests.m; sourceTree = "<group>"; };
+		831DF4CA1CFD392C004FFAF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		831DF4CF1CFD392C004FFAF8 /* HitronWifiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HitronWifiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		831DF4D31CFD392C004FFAF8 /* HitronWifiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitronWifiUITests.m; sourceTree = "<group>"; };
+		831DF4D51CFD392C004FFAF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		831DF4EC1CFD6695004FFAF8 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		831DF4ED1CFD6695004FFAF8 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		831DF4EE1CFD6695004FFAF8 /* UIView+IBInspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+IBInspect.h"; sourceTree = "<group>"; };
+		831DF4EF1CFD6695004FFAF8 /* UIView+IBInspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IBInspect.m"; sourceTree = "<group>"; };
+		831DF4F51CFD671B004FFAF8 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		831DF4F71CFD6721004FFAF8 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		831DF4F91CFD67B8004FFAF8 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		831DF4FA1CFD67B8004FFAF8 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		831DF4FD1CFD67B8004FFAF8 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		831DF4FE1CFD67B8004FFAF8 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		831DF4FF1CFD67B8004FFAF8 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		831DF5001CFD67B8004FFAF8 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		831DF5011CFD67B8004FFAF8 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		831DF5021CFD67B8004FFAF8 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		831DF5031CFD67B8004FFAF8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		831DF5041CFD67B8004FFAF8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		83915F1E1CFD951C0087C551 /* HIWUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIWUtility.h; sourceTree = "<group>"; };
+		83915F1F1CFD951C0087C551 /* HIWUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIWUtility.m; sourceTree = "<group>"; };
+		839863471CFE696D00205DE5 /* ConnectTestVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectTestVController.h; sourceTree = "<group>"; };
+		839863481CFE696D00205DE5 /* ConnectTestVController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectTestVController.m; sourceTree = "<group>"; };
+		8398634A1CFE699A00205DE5 /* I18NController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = I18NController.h; sourceTree = "<group>"; };
+		8398634B1CFE699A00205DE5 /* I18NController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = I18NController.m; sourceTree = "<group>"; };
+		8398634D1CFE6ACF00205DE5 /* NMSystemSettingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMSystemSettingManager.h; sourceTree = "<group>"; };
+		8398634E1CFE6ACF00205DE5 /* NMSystemSettingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMSystemSettingManager.m; sourceTree = "<group>"; };
+		839928D51D0553950011B9C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Second.storyboard; sourceTree = "<group>"; };
+		AD0E03341D01685B00AD8B4C /* avatar_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_frame.png; sourceTree = "<group>"; };
+		AD0E03351D01685B00AD8B4C /* bg_home.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_home.jpg; sourceTree = "<group>"; };
+		AD0E03361D01685B00AD8B4C /* bg_jonesphone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_jonesphone.jpg; sourceTree = "<group>"; };
+		AD0E03371D01685B00AD8B4C /* bg_login.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_login.jpg; sourceTree = "<group>"; };
+		AD0E03381D01685B00AD8B4C /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		AD0E03391D01685B00AD8B4C /* downline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downline.png; sourceTree = "<group>"; };
+		AD0E033A1D01685B00AD8B4C /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
+		AD0E033B1D01685B00AD8B4C /* ico_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_1.png; sourceTree = "<group>"; };
+		AD0E033C1D01685B00AD8B4C /* ico_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_2.png; sourceTree = "<group>"; };
+		AD0E033D1D01685B00AD8B4C /* ico_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_3.png; sourceTree = "<group>"; };
+		AD0E033E1D01685B00AD8B4C /* ico_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_4.png; sourceTree = "<group>"; };
+		AD0E033F1D01685B00AD8B4C /* ico_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_5.png; sourceTree = "<group>"; };
+		AD0E03401D01685B00AD8B4C /* ico_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_6.png; sourceTree = "<group>"; };
+		AD0E03411D01685B00AD8B4C /* ico_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_7.png; sourceTree = "<group>"; };
+		AD0E03421D01685B00AD8B4C /* ico_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_8.png; sourceTree = "<group>"; };
+		AD0E03431D01685B00AD8B4C /* ico_arrow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_arrow1.png; sourceTree = "<group>"; };
+		AD0E03441D01685B00AD8B4C /* ico_arrow2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_arrow2.png; sourceTree = "<group>"; };
+		AD0E03451D01685B00AD8B4C /* ico_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_back.png; sourceTree = "<group>"; };
+		AD0E03461D01685B00AD8B4C /* ico_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_camera.png; sourceTree = "<group>"; };
+		AD0E03471D01685B00AD8B4C /* ico_password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_password.png; sourceTree = "<group>"; };
+		AD0E03481D01685B00AD8B4C /* ico_quickaccess.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_quickaccess.png; sourceTree = "<group>"; };
+		AD0E03491D01685B00AD8B4C /* ico_reconnect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_reconnect.png; sourceTree = "<group>"; };
+		AD0E034A1D01685B00AD8B4C /* ico_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_user.png; sourceTree = "<group>"; };
+		AD0E034B1D01685B00AD8B4C /* icon_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_about.png; sourceTree = "<group>"; };
+		AD0E034C1D01685B00AD8B4C /* icon_jonephone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_jonephone.png; sourceTree = "<group>"; };
+		AD0E034D1D01685B00AD8B4C /* icon_networkmapping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_networkmapping.png; sourceTree = "<group>"; };
+		AD0E034E1D01685B00AD8B4C /* icon_otification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_otification.png; sourceTree = "<group>"; };
+		AD0E034F1D01685B00AD8B4C /* icon_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_photo.png; sourceTree = "<group>"; };
+		AD0E03501D01685B00AD8B4C /* icon_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_setting.png; sourceTree = "<group>"; };
+		AD0E03511D01685B00AD8B4C /* icon_usermanageme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_usermanageme.png; sourceTree = "<group>"; };
+		AD0E03521D01685B00AD8B4C /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		AD0E03531D01685B00AD8B4C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		AD0E03541D01685B00AD8B4C /* off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = off.png; sourceTree = "<group>"; };
+		AD0E03551D01685B00AD8B4C /* on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = on.png; sourceTree = "<group>"; };
+		AD0E03561D01685B00AD8B4C /* online.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = online.png; sourceTree = "<group>"; };
+		AD0E03571D01685B00AD8B4C /* type_pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_pad.png; sourceTree = "<group>"; };
+		AD0E03581D01685B00AD8B4C /* type_pc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_pc.png; sourceTree = "<group>"; };
+		AD0E03591D01685B00AD8B4C /* type_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_phone.png; sourceTree = "<group>"; };
+		AD0E035A1D01685B00AD8B4C /* uaer_daughter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uaer_daughter.png; sourceTree = "<group>"; };
+		AD0E035B1D01685B00AD8B4C /* uaer_father.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uaer_father.png; sourceTree = "<group>"; };
+		AD0E035C1D01685B00AD8B4C /* uaer_mother.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uaer_mother.png; sourceTree = "<group>"; };
+		AD0E035D1D01685B00AD8B4C /* uaer_son.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uaer_son.png; sourceTree = "<group>"; };
+		AD0E035E1D01685B00AD8B4C /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		AD0E035F1D01685B00AD8B4C /* user_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_press.png; sourceTree = "<group>"; };
+		ADC85F171D018BDF006D9750 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		ADC85F181D018BDF006D9750 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		ADC85F1A1D018BF2006D9750 /* UserGuideLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserGuideLineViewController.h; sourceTree = "<group>"; };
+		ADC85F1B1D018BF2006D9750 /* UserGuideLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserGuideLineViewController.m; sourceTree = "<group>"; };
+		ADC85F1D1D018C6A006D9750 /* ScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeViewController.h; sourceTree = "<group>"; };
+		ADC85F1E1D018C6A006D9750 /* ScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRCodeViewController.m; sourceTree = "<group>"; };
+		CD77D36C27383BFCCC30583C /* Pods-HitronWifi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HitronWifi.release.xcconfig"; path = "Pods/Target Support Files/Pods-HitronWifi/Pods-HitronWifi.release.xcconfig"; sourceTree = "<group>"; };
+		D3AA0988FB681972E9663765 /* libPods-HitronWifi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HitronWifi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F24954E86AF21F4424D4DC18 /* Pods-HitronWifi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HitronWifi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HitronWifi/Pods-HitronWifi.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		831DF4A81CFD392C004FFAF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD034ADF419EBD9FA4CE87E5 /* libPods-HitronWifi.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		831DF4C11CFD392C004FFAF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		831DF4CC1CFD392C004FFAF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		831DB7321D065B9B00A79D67 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		831DB7331D065B9B00A79D67 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		831DF4A21CFD392C004FFAF8 = {
+			isa = PBXGroup;
+			children = (
+				831DF4AD1CFD392C004FFAF8 /* HitronWifi */,
+				831DF4C71CFD392C004FFAF8 /* HitronWifiTests */,
+				831DF4D21CFD392C004FFAF8 /* HitronWifiUITests */,
+				831DF4AC1CFD392C004FFAF8 /* Products */,
+				FC4EAE0A82ACCF58CC05093C /* Pods */,
+				DF2108DE45F5855937379A89 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		831DF4AC1CFD392C004FFAF8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				831DF4AB1CFD392C004FFAF8 /* HitronWifi.app */,
+				831DF4C41CFD392C004FFAF8 /* HitronWifiTests.xctest */,
+				831DF4CF1CFD392C004FFAF8 /* HitronWifiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		831DF4AD1CFD392C004FFAF8 /* HitronWifi */ = {
+			isa = PBXGroup;
+			children = (
+				831DB7321D065B9B00A79D67 /* Models */,
+				831DB7331D065B9B00A79D67 /* Views */,
+				AD0E03321D01685B00AD8B4C /* Resources */,
+				831DF4F81CFD67AD004FFAF8 /* Base */,
+				831DF4E31CFD39B2004FFAF8 /* Utility */,
+				839863531CFE6C6F00205DE5 /* WebServices */,
+				831DF4E21CFD39B2004FFAF8 /* ViewControllers */,
+				831DF4B11CFD392C004FFAF8 /* AppDelegate.h */,
+				831DF4B21CFD392C004FFAF8 /* AppDelegate.m */,
+				831DF4AE1CFD392C004FFAF8 /* Supporting Files */,
+			);
+			path = HitronWifi;
+			sourceTree = "<group>";
+		};
+		831DF4AE1CFD392C004FFAF8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				831DB7601D06C99000A79D67 /* HWViewDisplay.plist */,
+				831DF4B71CFD392C004FFAF8 /* Main.storyboard */,
+				839928D41D0553950011B9C4 /* Second.storyboard */,
+				831DF4F51CFD671B004FFAF8 /* loading.gif */,
+				831DF4BA1CFD392C004FFAF8 /* Assets.xcassets */,
+				831DF4BC1CFD392C004FFAF8 /* LaunchScreen.storyboard */,
+				831DF4BF1CFD392C004FFAF8 /* Info.plist */,
+				831DF4AF1CFD392C004FFAF8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		831DF4C71CFD392C004FFAF8 /* HitronWifiTests */ = {
+			isa = PBXGroup;
+			children = (
+				831DF4C81CFD392C004FFAF8 /* HitronWifiTests.m */,
+				831DF4CA1CFD392C004FFAF8 /* Info.plist */,
+			);
+			path = HitronWifiTests;
+			sourceTree = "<group>";
+		};
+		831DF4D21CFD392C004FFAF8 /* HitronWifiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				831DF4D31CFD392C004FFAF8 /* HitronWifiUITests.m */,
+				831DF4D51CFD392C004FFAF8 /* Info.plist */,
+			);
+			path = HitronWifiUITests;
+			sourceTree = "<group>";
+		};
+		831DF4E21CFD39B2004FFAF8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				839928D71D0554110011B9C4 /* UserInfomation */,
+				839863471CFE696D00205DE5 /* ConnectTestVController.h */,
+				839863481CFE696D00205DE5 /* ConnectTestVController.m */,
+				ADC85F171D018BDF006D9750 /* LoginViewController.h */,
+				ADC85F181D018BDF006D9750 /* LoginViewController.m */,
+				ADC85F1A1D018BF2006D9750 /* UserGuideLineViewController.h */,
+				ADC85F1B1D018BF2006D9750 /* UserGuideLineViewController.m */,
+				ADC85F1D1D018C6A006D9750 /* ScanQRCodeViewController.h */,
+				ADC85F1E1D018C6A006D9750 /* ScanQRCodeViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		831DF4E31CFD39B2004FFAF8 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8398634D1CFE6ACF00205DE5 /* NMSystemSettingManager.h */,
+				8398634E1CFE6ACF00205DE5 /* NMSystemSettingManager.m */,
+				8398634A1CFE699A00205DE5 /* I18NController.h */,
+				8398634B1CFE699A00205DE5 /* I18NController.m */,
+				831DF4F71CFD6721004FFAF8 /* Constant.h */,
+				831DF4EC1CFD6695004FFAF8 /* Utility.m */,
+				831DF4ED1CFD6695004FFAF8 /* Utility.h */,
+				831DF4EE1CFD6695004FFAF8 /* UIView+IBInspect.h */,
+				831DF4EF1CFD6695004FFAF8 /* UIView+IBInspect.m */,
+				83915F1E1CFD951C0087C551 /* HIWUtility.h */,
+				83915F1F1CFD951C0087C551 /* HIWUtility.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		831DF4F81CFD67AD004FFAF8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				831DB7511D069A9E00A79D67 /* BaseService.h */,
+				831DB7521D069A9E00A79D67 /* BaseService.m */,
+				831DF4F91CFD67B8004FFAF8 /* BaseModel.h */,
+				831DF4FA1CFD67B8004FFAF8 /* BaseModel.m */,
+				831DF4FD1CFD67B8004FFAF8 /* CollectionViewController.h */,
+				831DF4FE1CFD67B8004FFAF8 /* CollectionViewController.m */,
+				831DF4FF1CFD67B8004FFAF8 /* NavigationController.h */,
+				831DF5001CFD67B8004FFAF8 /* NavigationController.m */,
+				831DF5011CFD67B8004FFAF8 /* TableViewController.h */,
+				831DF5021CFD67B8004FFAF8 /* TableViewController.m */,
+				831DF5031CFD67B8004FFAF8 /* ViewController.h */,
+				831DF5041CFD67B8004FFAF8 /* ViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		839863531CFE6C6F00205DE5 /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				831DB74E1D069A8E00A79D67 /* ConnectTestService.h */,
+				831DB74F1D069A8E00A79D67 /* ConnectTestService.m */,
+			);
+			path = WebServices;
+			sourceTree = "<group>";
+		};
+		839928D71D0554110011B9C4 /* UserInfomation */ = {
+			isa = PBXGroup;
+			children = (
+				831DB7541D069AD200A79D67 /* HWUserInfoService.h */,
+				831DB7551D069AD200A79D67 /* HWUserInfoService.m */,
+				831DB7481D0666D900A79D67 /* HWUser.h */,
+				831DB7491D0666D900A79D67 /* HWUser.m */,
+				831DB74B1D06974E00A79D67 /* HWHost.h */,
+				831DB74C1D06974E00A79D67 /* HWHost.m */,
+				831DB7401D06621E00A79D67 /* HWUserAvatorCell.h */,
+				831DB7411D06621E00A79D67 /* HWUserAvatorCell.m */,
+				831DB7571D06C10600A79D67 /* HWUserTitleIconCell.h */,
+				831DB7581D06C10600A79D67 /* HWUserTitleIconCell.m */,
+				831DB75A1D06C11C00A79D67 /* HWUserTitleCell.h */,
+				831DB75B1D06C11C00A79D67 /* HWUserTitleCell.m */,
+				831DB7451D06665300A79D67 /* HWUserManager.h */,
+				831DB7461D06665300A79D67 /* HWUserManager.m */,
+				831DB7341D065D3A00A79D67 /* HWUserInfoController.h */,
+				831DB7351D065D3A00A79D67 /* HWUserInfoController.m */,
+				831DB7621D06F16B00A79D67 /* HWResetPasswordController.h */,
+				831DB7631D06F16B00A79D67 /* HWResetPasswordController.m */,
+				831DB73D1D0661CD00A79D67 /* HWUserInfoDataController.h */,
+				831DB73E1D0661CD00A79D67 /* HWUserInfoDataController.m */,
+				831DB73A1D065DB300A79D67 /* HWBaseCell.h */,
+				831DB73B1D065DB300A79D67 /* HWBaseCell.m */,
+				831DB75D1D06C7C800A79D67 /* HWBaseCellModel.h */,
+				831DB75E1D06C7C800A79D67 /* HWBaseCellModel.m */,
+			);
+			path = UserInfomation;
+			sourceTree = "<group>";
+		};
+		AD0E03321D01685B00AD8B4C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AD0E03331D01685B00AD8B4C /* images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AD0E03331D01685B00AD8B4C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				AD0E03341D01685B00AD8B4C /* avatar_frame.png */,
+				AD0E03351D01685B00AD8B4C /* bg_home.jpg */,
+				AD0E03361D01685B00AD8B4C /* bg_jonesphone.jpg */,
+				AD0E03371D01685B00AD8B4C /* bg_login.jpg */,
+				AD0E03381D01685B00AD8B4C /* button.png */,
+				AD0E03391D01685B00AD8B4C /* downline.png */,
+				AD0E033A1D01685B00AD8B4C /* help.png */,
+				AD0E033B1D01685B00AD8B4C /* ico_1.png */,
+				AD0E033C1D01685B00AD8B4C /* ico_2.png */,
+				AD0E033D1D01685B00AD8B4C /* ico_3.png */,
+				AD0E033E1D01685B00AD8B4C /* ico_4.png */,
+				AD0E033F1D01685B00AD8B4C /* ico_5.png */,
+				AD0E03401D01685B00AD8B4C /* ico_6.png */,
+				AD0E03411D01685B00AD8B4C /* ico_7.png */,
+				AD0E03421D01685B00AD8B4C /* ico_8.png */,
+				AD0E03431D01685B00AD8B4C /* ico_arrow1.png */,
+				AD0E03441D01685B00AD8B4C /* ico_arrow2.png */,
+				AD0E03451D01685B00AD8B4C /* ico_back.png */,
+				AD0E03461D01685B00AD8B4C /* ico_camera.png */,
+				AD0E03471D01685B00AD8B4C /* ico_password.png */,
+				AD0E03481D01685B00AD8B4C /* ico_quickaccess.png */,
+				AD0E03491D01685B00AD8B4C /* ico_reconnect.png */,
+				AD0E034A1D01685B00AD8B4C /* ico_user.png */,
+				AD0E034B1D01685B00AD8B4C /* icon_about.png */,
+				AD0E034C1D01685B00AD8B4C /* icon_jonephone.png */,
+				AD0E034D1D01685B00AD8B4C /* icon_networkmapping.png */,
+				AD0E034E1D01685B00AD8B4C /* icon_otification.png */,
+				AD0E034F1D01685B00AD8B4C /* icon_photo.png */,
+				AD0E03501D01685B00AD8B4C /* icon_setting.png */,
+				AD0E03511D01685B00AD8B4C /* icon_usermanageme.png */,
+				AD0E03521D01685B00AD8B4C /* loading.gif */,
+				AD0E03531D01685B00AD8B4C /* logo.png */,
+				AD0E03541D01685B00AD8B4C /* off.png */,
+				AD0E03551D01685B00AD8B4C /* on.png */,
+				AD0E03561D01685B00AD8B4C /* online.png */,
+				AD0E03571D01685B00AD8B4C /* type_pad.png */,
+				AD0E03581D01685B00AD8B4C /* type_pc.png */,
+				AD0E03591D01685B00AD8B4C /* type_phone.png */,
+				AD0E035A1D01685B00AD8B4C /* uaer_daughter.png */,
+				AD0E035B1D01685B00AD8B4C /* uaer_father.png */,
+				AD0E035C1D01685B00AD8B4C /* uaer_mother.png */,
+				AD0E035D1D01685B00AD8B4C /* uaer_son.png */,
+				AD0E035E1D01685B00AD8B4C /* user.png */,
+				AD0E035F1D01685B00AD8B4C /* user_press.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		DF2108DE45F5855937379A89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3AA0988FB681972E9663765 /* libPods-HitronWifi.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC4EAE0A82ACCF58CC05093C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F24954E86AF21F4424D4DC18 /* Pods-HitronWifi.debug.xcconfig */,
+				CD77D36C27383BFCCC30583C /* Pods-HitronWifi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		831DF4AA1CFD392C004FFAF8 /* HitronWifi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 831DF4D81CFD392C004FFAF8 /* Build configuration list for PBXNativeTarget "HitronWifi" */;
+			buildPhases = (
+				3AFF7149C1F78C4F4E0704EF /* 📦 Check Pods Manifest.lock */,
+				831DF4A71CFD392C004FFAF8 /* Sources */,
+				831DF4A81CFD392C004FFAF8 /* Frameworks */,
+				831DF4A91CFD392C004FFAF8 /* Resources */,
+				1F1A446A4EE3AF5B4446DD57 /* 📦 Embed Pods Frameworks */,
+				8DD4954F25A62B4D892B983C /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HitronWifi;
+			productName = HitronWifi;
+			productReference = 831DF4AB1CFD392C004FFAF8 /* HitronWifi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		831DF4C31CFD392C004FFAF8 /* HitronWifiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 831DF4DB1CFD392C004FFAF8 /* Build configuration list for PBXNativeTarget "HitronWifiTests" */;
+			buildPhases = (
+				831DF4C01CFD392C004FFAF8 /* Sources */,
+				831DF4C11CFD392C004FFAF8 /* Frameworks */,
+				831DF4C21CFD392C004FFAF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				831DF4C61CFD392C004FFAF8 /* PBXTargetDependency */,
+			);
+			name = HitronWifiTests;
+			productName = HitronWifiTests;
+			productReference = 831DF4C41CFD392C004FFAF8 /* HitronWifiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		831DF4CE1CFD392C004FFAF8 /* HitronWifiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 831DF4DE1CFD392C004FFAF8 /* Build configuration list for PBXNativeTarget "HitronWifiUITests" */;
+			buildPhases = (
+				831DF4CB1CFD392C004FFAF8 /* Sources */,
+				831DF4CC1CFD392C004FFAF8 /* Frameworks */,
+				831DF4CD1CFD392C004FFAF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				831DF4D11CFD392C004FFAF8 /* PBXTargetDependency */,
+			);
+			name = HitronWifiUITests;
+			productName = HitronWifiUITests;
+			productReference = 831DF4CF1CFD392C004FFAF8 /* HitronWifiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		831DF4A31CFD392C004FFAF8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Neo.Gao;
+				TargetAttributes = {
+					831DF4AA1CFD392C004FFAF8 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					831DF4C31CFD392C004FFAF8 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 831DF4AA1CFD392C004FFAF8;
+					};
+					831DF4CE1CFD392C004FFAF8 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 831DF4AA1CFD392C004FFAF8;
+					};
+				};
+			};
+			buildConfigurationList = 831DF4A61CFD392C004FFAF8 /* Build configuration list for PBXProject "HitronWifi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 831DF4A21CFD392C004FFAF8;
+			productRefGroup = 831DF4AC1CFD392C004FFAF8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				831DF4AA1CFD392C004FFAF8 /* HitronWifi */,
+				831DF4C31CFD392C004FFAF8 /* HitronWifiTests */,
+				831DF4CE1CFD392C004FFAF8 /* HitronWifiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		831DF4A91CFD392C004FFAF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD0E03741D01685B00AD8B4C /* ico_quickaccess.png in Resources */,
+				831DF4BE1CFD392C004FFAF8 /* LaunchScreen.storyboard in Resources */,
+				AD0E03691D01685B00AD8B4C /* ico_3.png in Resources */,
+				AD0E036A1D01685B00AD8B4C /* ico_4.png in Resources */,
+				AD0E03651D01685B00AD8B4C /* downline.png in Resources */,
+				AD0E03841D01685B00AD8B4C /* type_pc.png in Resources */,
+				AD0E03831D01685B00AD8B4C /* type_pad.png in Resources */,
+				831DF4F61CFD671B004FFAF8 /* loading.gif in Resources */,
+				AD0E03871D01685B00AD8B4C /* uaer_father.png in Resources */,
+				831DF4BB1CFD392C004FFAF8 /* Assets.xcassets in Resources */,
+				AD0E03621D01685B00AD8B4C /* bg_jonesphone.jpg in Resources */,
+				AD0E03891D01685B00AD8B4C /* uaer_son.png in Resources */,
+				AD0E03631D01685B00AD8B4C /* bg_login.jpg in Resources */,
+				839928D61D0553960011B9C4 /* Second.storyboard in Resources */,
+				AD0E038A1D01685B00AD8B4C /* user.png in Resources */,
+				AD0E03611D01685B00AD8B4C /* bg_home.jpg in Resources */,
+				831DF4B91CFD392C004FFAF8 /* Main.storyboard in Resources */,
+				AD0E03641D01685B00AD8B4C /* button.png in Resources */,
+				AD0E03851D01685B00AD8B4C /* type_phone.png in Resources */,
+				AD0E03791D01685B00AD8B4C /* icon_networkmapping.png in Resources */,
+				AD0E037C1D01685B00AD8B4C /* icon_setting.png in Resources */,
+				AD0E03821D01685B00AD8B4C /* online.png in Resources */,
+				AD0E036F1D01685B00AD8B4C /* ico_arrow1.png in Resources */,
+				AD0E036B1D01685B00AD8B4C /* ico_5.png in Resources */,
+				AD0E03811D01685B00AD8B4C /* on.png in Resources */,
+				AD0E03681D01685B00AD8B4C /* ico_2.png in Resources */,
+				AD0E03751D01685B00AD8B4C /* ico_reconnect.png in Resources */,
+				AD0E03771D01685B00AD8B4C /* icon_about.png in Resources */,
+				AD0E03711D01685B00AD8B4C /* ico_back.png in Resources */,
+				AD0E038B1D01685B00AD8B4C /* user_press.png in Resources */,
+				AD0E03861D01685B00AD8B4C /* uaer_daughter.png in Resources */,
+				AD0E037F1D01685B00AD8B4C /* logo.png in Resources */,
+				AD0E037B1D01685B00AD8B4C /* icon_photo.png in Resources */,
+				AD0E03761D01685B00AD8B4C /* ico_user.png in Resources */,
+				AD0E036E1D01685B00AD8B4C /* ico_8.png in Resources */,
+				AD0E03781D01685B00AD8B4C /* icon_jonephone.png in Resources */,
+				AD0E037D1D01685B00AD8B4C /* icon_usermanageme.png in Resources */,
+				831DB7611D06C99000A79D67 /* HWViewDisplay.plist in Resources */,
+				AD0E03731D01685B00AD8B4C /* ico_password.png in Resources */,
+				AD0E03661D01685B00AD8B4C /* help.png in Resources */,
+				AD0E03601D01685B00AD8B4C /* avatar_frame.png in Resources */,
+				AD0E03701D01685B00AD8B4C /* ico_arrow2.png in Resources */,
+				AD0E03671D01685B00AD8B4C /* ico_1.png in Resources */,
+				AD0E037A1D01685B00AD8B4C /* icon_otification.png in Resources */,
+				AD0E03801D01685B00AD8B4C /* off.png in Resources */,
+				AD0E03721D01685B00AD8B4C /* ico_camera.png in Resources */,
+				AD0E03881D01685B00AD8B4C /* uaer_mother.png in Resources */,
+				AD0E037E1D01685B00AD8B4C /* loading.gif in Resources */,
+				AD0E036C1D01685B00AD8B4C /* ico_6.png in Resources */,
+				AD0E036D1D01685B00AD8B4C /* ico_7.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		831DF4C21CFD392C004FFAF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		831DF4CD1CFD392C004FFAF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F1A446A4EE3AF5B4446DD57 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HitronWifi/Pods-HitronWifi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AFF7149C1F78C4F4E0704EF /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8DD4954F25A62B4D892B983C /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HitronWifi/Pods-HitronWifi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		831DF4A71CFD392C004FFAF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				831DF5091CFD67B8004FFAF8 /* TableViewController.m in Sources */,
+				831DF4F01CFD6695004FFAF8 /* Utility.m in Sources */,
+				831DB7531D069A9E00A79D67 /* BaseService.m in Sources */,
+				839863491CFE696D00205DE5 /* ConnectTestVController.m in Sources */,
+				831DB7561D069AD200A79D67 /* HWUserInfoService.m in Sources */,
+				831DB75F1D06C7C800A79D67 /* HWBaseCellModel.m in Sources */,
+				831DB7421D06621E00A79D67 /* HWUserAvatorCell.m in Sources */,
+				831DB7471D06665300A79D67 /* HWUserManager.m in Sources */,
+				831DF4F11CFD6695004FFAF8 /* UIView+IBInspect.m in Sources */,
+				831DB7641D06F16B00A79D67 /* HWResetPasswordController.m in Sources */,
+				831DB74A1D0666D900A79D67 /* HWUser.m in Sources */,
+				831DB73F1D0661CD00A79D67 /* HWUserInfoDataController.m in Sources */,
+				831DF5051CFD67B8004FFAF8 /* BaseModel.m in Sources */,
+				831DB75C1D06C11C00A79D67 /* HWUserTitleCell.m in Sources */,
+				831DB7501D069A8E00A79D67 /* ConnectTestService.m in Sources */,
+				831DF50A1CFD67B8004FFAF8 /* ViewController.m in Sources */,
+				83915F201CFD951C0087C551 /* HIWUtility.m in Sources */,
+				831DB73C1D065DB300A79D67 /* HWBaseCell.m in Sources */,
+				ADC85F191D018BDF006D9750 /* LoginViewController.m in Sources */,
+				831DB7361D065D3A00A79D67 /* HWUserInfoController.m in Sources */,
+				831DF4B31CFD392C004FFAF8 /* AppDelegate.m in Sources */,
+				831DB74D1D06974E00A79D67 /* HWHost.m in Sources */,
+				831DF5081CFD67B8004FFAF8 /* NavigationController.m in Sources */,
+				ADC85F1C1D018BF2006D9750 /* UserGuideLineViewController.m in Sources */,
+				8398634F1CFE6ACF00205DE5 /* NMSystemSettingManager.m in Sources */,
+				831DF4B01CFD392C004FFAF8 /* main.m in Sources */,
+				831DF5071CFD67B8004FFAF8 /* CollectionViewController.m in Sources */,
+				831DB7591D06C10600A79D67 /* HWUserTitleIconCell.m in Sources */,
+				8398634C1CFE699A00205DE5 /* I18NController.m in Sources */,
+				ADC85F1F1D018C6A006D9750 /* ScanQRCodeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		831DF4C01CFD392C004FFAF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				831DF4C91CFD392C004FFAF8 /* HitronWifiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		831DF4CB1CFD392C004FFAF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				831DF4D41CFD392C004FFAF8 /* HitronWifiUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		831DF4C61CFD392C004FFAF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 831DF4AA1CFD392C004FFAF8 /* HitronWifi */;
+			targetProxy = 831DF4C51CFD392C004FFAF8 /* PBXContainerItemProxy */;
+		};
+		831DF4D11CFD392C004FFAF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 831DF4AA1CFD392C004FFAF8 /* HitronWifi */;
+			targetProxy = 831DF4D01CFD392C004FFAF8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		831DF4B71CFD392C004FFAF8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				831DF4B81CFD392C004FFAF8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		831DF4BC1CFD392C004FFAF8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				831DF4BD1CFD392C004FFAF8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		839928D41D0553950011B9C4 /* Second.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839928D51D0553950011B9C4 /* Base */,
+			);
+			name = Second.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		831DF4D61CFD392C004FFAF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		831DF4D71CFD392C004FFAF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		831DF4D91CFD392C004FFAF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F24954E86AF21F4424D4DC18 /* Pods-HitronWifi.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HitronWifi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.movit-tech.HitronWifi";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		831DF4DA1CFD392C004FFAF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD77D36C27383BFCCC30583C /* Pods-HitronWifi.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HitronWifi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.movit-tech.HitronWifi";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		831DF4DC1CFD392C004FFAF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HitronWifiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.movit-tech.HitronWifiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HitronWifi.app/HitronWifi";
+			};
+			name = Debug;
+		};
+		831DF4DD1CFD392C004FFAF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HitronWifiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.movit-tech.HitronWifiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HitronWifi.app/HitronWifi";
+			};
+			name = Release;
+		};
+		831DF4DF1CFD392C004FFAF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HitronWifiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.movit-tech.HitronWifiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HitronWifi;
+			};
+			name = Debug;
+		};
+		831DF4E01CFD392C004FFAF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HitronWifiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.movit-tech.HitronWifiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HitronWifi;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		831DF4A61CFD392C004FFAF8 /* Build configuration list for PBXProject "HitronWifi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				831DF4D61CFD392C004FFAF8 /* Debug */,
+				831DF4D71CFD392C004FFAF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		831DF4D81CFD392C004FFAF8 /* Build configuration list for PBXNativeTarget "HitronWifi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				831DF4D91CFD392C004FFAF8 /* Debug */,
+				831DF4DA1CFD392C004FFAF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		831DF4DB1CFD392C004FFAF8 /* Build configuration list for PBXNativeTarget "HitronWifiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				831DF4DC1CFD392C004FFAF8 /* Debug */,
+				831DF4DD1CFD392C004FFAF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		831DF4DE1CFD392C004FFAF8 /* Build configuration list for PBXNativeTarget "HitronWifiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				831DF4DF1CFD392C004FFAF8 /* Debug */,
+				831DF4E01CFD392C004FFAF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 831DF4A31CFD392C004FFAF8 /* Project object */;
+}
